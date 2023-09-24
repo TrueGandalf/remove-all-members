@@ -28,7 +28,7 @@ Now add me to a group and don't forget to give me the permissions.
 Then send /kick in the group and I will start my work.'''
 
 @app.on_message(filters.group & filters.command("kick"))
-def main(_, msg: Message):
+async def main(_, msg: Message):
     chat = msg.chat
     me = chat.get_member(app.get_me().id)
     if chat.get_member(msg.from_user.id).can_manage_chat and me.can_restrict_members and me.can_delete_messages:
@@ -47,12 +47,12 @@ def main(_, msg: Message):
 
 
 @app.on_message(filters.group & filters.service, group=2)
-def service(c, m):
+async def service(c, m):
     m.delete()
 
 
 @app.on_message(filters.private)
-def start(_, msg: Message):
+async def start(_, msg: Message):
     msg.reply(PRIVATE, reply_markup=InlineKeyboardMarkup([[
         InlineKeyboardButton("Source Code", url="https://www.github.com/samadii/remove-all-members")]]))
 
