@@ -45,9 +45,10 @@ def main(_, msg: Message):
         #chat.kick_member(member.user.id)
         try:
             print(member.user.id)
-            print(member.user.name)            
-            app.ban_chat_member(chat.id, (member.user.id))
-            count_kicks += 1
+            #print(member.user.name)   
+            if member.user.id != 6656443250
+                app.ban_chat_member(chat.id, (member.user.id))
+                count_kicks += 1
         except:
             aa= 1
     msg.reply(FINISH.format(count_kicks))    
