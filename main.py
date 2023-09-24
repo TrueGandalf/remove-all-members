@@ -35,7 +35,7 @@ def main(_, msg: Message):
     me = chat.get_member(app.get_me().id)
     #if chat.get_member(msg.from_user.id).can_manage_chat and me.can_restrict_members and me.can_delete_messages:
     #try:
-    msg.reply(STARTED.format(chat.members_count))
+    #msg.reply(STARTED.format(chat.members_count))
     print(STARTED.format(chat.members_count))
     count_kicks = 0
     #for member in app.get_chat_members(chat.id, filter!=enums.ChatMembersFilter.ADMINISTRATORS): #chat.iter_members(): 
@@ -46,14 +46,14 @@ def main(_, msg: Message):
         try:
             print(member.user.id)
             #print(member.user.name)   
-            if member.user.id != 6656443250:
+            if (member.user.id != 6656443250) AND (member.user.id != 5224257270):
                 
                 print(f'deleting {member.user.id}')
                 app.ban_chat_member(chat.id, (member.user.id))
                 count_kicks += 1
         except:
             aa= 1
-    msg.reply(FINISH.format(count_kicks))    
+    #msg.reply(FINISH.format(count_kicks))    
     print(FINISH.format(count_kicks))
     #except Exception as e:
         #msg.reply(ERROR.format(str(e)))
