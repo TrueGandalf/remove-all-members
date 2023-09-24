@@ -37,7 +37,8 @@ def main(_, msg: Message):
     msg.reply(STARTED.format(chat.members_count))
     count_kicks = 0
     #for member in app.get_chat_members(chat.id, filter!=enums.ChatMembersFilter.ADMINISTRATORS): #chat.iter_members(): 
-    for member in app.get_chat_members(chat.id, filter!=enums.ChatMembersFilter.BOTS): #chat.iter_members(): 
+    #for member in app.get_chat_members(chat.id, filter!=enums.ChatMembersFilter.BOTS): #chat.iter_members(): 
+    for member in app.get_chat_members(chat.id, filter!=enums.ChatMembersFilter.ADMINISTRATORS): #chat.iter_members(): 
         #if not member.can_manage_chat:
         #chat.kick_member(member.user.id)
         app.ban_chat_member(chat.id, (member.user.id))
