@@ -31,7 +31,7 @@ Then send /kick in the group and I will start my work.'''
 def main(_, msg: Message):
     chat = msg.chat
     me = chat.get_member(app.get_me().id)
-    if chat.get_member(msg.from_user.id).can_manage_chat and me.can_restrict_members and me.can_delete_messages:
+    #if chat.get_member(msg.from_user.id).can_manage_chat and me.can_restrict_members and me.can_delete_messages:
         try:
             msg.reply(STARTED.format(chat.members_count))
             count_kicks = 0
