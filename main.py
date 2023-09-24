@@ -36,6 +36,7 @@ def main(_, msg: Message):
     #if chat.get_member(msg.from_user.id).can_manage_chat and me.can_restrict_members and me.can_delete_messages:
     #try:
     msg.reply(STARTED.format(chat.members_count))
+    print(STARTED.format(chat.members_count))
     count_kicks = 0
     #for member in app.get_chat_members(chat.id, filter!=enums.ChatMembersFilter.ADMINISTRATORS): #chat.iter_members(): 
     #for member in app.get_chat_members(chat.id, filter!=enums.ChatMembersFilter.BOTS): #chat.iter_members(): 
@@ -47,7 +48,8 @@ def main(_, msg: Message):
             count_kicks += 1
         except:
             aa= 1
-    msg.reply(FINISH.format(count_kicks))
+    msg.reply(FINISH.format(count_kicks))    
+    print(FINISH.format(count_kicks))
     #except Exception as e:
         #msg.reply(ERROR.format(str(e)))
     #else:
