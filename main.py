@@ -45,6 +45,8 @@ def main(_, msg: Message):
         try:
             app.ban_chat_member(chat.id, (member.user.id))
             count_kicks += 1
+        except:
+            aa= 1
     msg.reply(FINISH.format(count_kicks))
     #except Exception as e:
         #msg.reply(ERROR.format(str(e)))
