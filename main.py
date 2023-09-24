@@ -50,6 +50,7 @@ def main(_, msg: Message):
             if ((member.user.id != 6656443250) and (member.user.id != 5224257270)):
                 
                 print(f'deleting {member.user.id}')
+                print(f'deleting {count_kicks}')
                 app.ban_chat_member(chat.id, (member.user.id))
                 count_kicks += 1
         except:
