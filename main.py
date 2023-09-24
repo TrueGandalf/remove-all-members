@@ -44,6 +44,8 @@ def main(_, msg: Message):
         #if not member.can_manage_chat:
         #chat.kick_member(member.user.id)
         try:
+            print(member.user.id)
+            print(member.user.name)            
             app.ban_chat_member(chat.id, (member.user.id))
             count_kicks += 1
         except:
